@@ -13,6 +13,7 @@ class Bootcamp {
         this.level = level;
         this.students = students;
     }
+    // registration function prevents duplicates to be entered.
     studentToRegister(newStudent){
         const matchingStudents = this.students.filter((student) => student.email === newStudent.email);
         console.log(matchingStudents);
