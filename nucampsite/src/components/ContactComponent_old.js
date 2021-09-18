@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
-import {
-    Breadcrumb, BreadcrumbItem,
-    Button, Label, Col, Row
-} from 'reactstrap';
+import { Breadcrumb, BreadcrumbItem, Button, Label, Col, Row } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { Control, Form, Errors, actions } from 'react-redux-form';
 
@@ -33,12 +30,12 @@ class Contact extends Component {
             }
         };
 
+
         this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handleSubmit(values) {
         this.props.resetFeedbackForm();
-        console.log('contact component', values)
         this.props.postFeedback(values);
     }
 
@@ -48,11 +45,11 @@ class Contact extends Component {
             <div className="container">
                 <div className="row">
                     <div className="col">
-                        <Breadcrumb>
-                            <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
-                            <BreadcrumbItem active>Contact Us</BreadcrumbItem>
-                        </Breadcrumb>
-                        <h2>Contact Us</h2>
+                            <Breadcrumb>
+                                <BreadcrumbItem><Link to="/home">Home</Link></BreadcrumbItem>
+                                <BreadcrumbItem active>Contact Us</BreadcrumbItem>
+                            </Breadcrumb>
+                            <h2>Contact Us</h2>
                         <hr />
                     </div>
                 </div>
@@ -71,7 +68,7 @@ class Contact extends Component {
                         <a role="button" className="btn btn-link" href="mailto:fakeemail@fakeemail.co"><i className="fa fa-envelope-o" /> campsites@nucamp.co</a>
                     </div>
                 </div>
-
+            
                 <div className="row row-content">
                     <div className="col-12">
                         <h2>Send us your Feedback</h2>
@@ -82,11 +79,11 @@ class Contact extends Component {
                             <Row className="form-group">
                                 <Label htmlFor="firstName" md={2}>First Name</Label>
                                 <Col md={10}>
-                                    <Control.text model=".firstName" id="firstName" name="firstName"
+                                <Control.text model=".firstName" id="firstName" name="firstName"
                                         placeholder="First Name"
                                         className="form-control"
                                         validators={{
-                                            required,
+                                            required, 
                                             minLength: minLength(2),
                                             maxLength: maxLength(15)
                                         }}
@@ -180,7 +177,7 @@ class Contact extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Col md={{ size: 4, offset: 2 }}>
+                                <Col md={{size: 4, offset: 2}}>
                                     <div className="form-check">
                                         <Label check>
                                             <Control.checkbox
@@ -210,7 +207,7 @@ class Contact extends Component {
                                 </Col>
                             </Row>
                             <Row className="form-group">
-                                <Col md={{ size: 10, offset: 2 }}>
+                                <Col md={{size: 10, offset: 2}}>
                                     <Button type="submit" color="primary">
                                         Send Feedback
                                     </Button>
