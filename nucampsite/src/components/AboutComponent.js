@@ -3,6 +3,7 @@ import { Breadcrumb, BreadcrumbItem, Card, CardBody, CardHeader, Media } from 'r
 import { Link } from 'react-router-dom';
 import { baseUrl } from '../shared/baseUrl';
 import { Loading } from './LoadingComponent'; 
+import { FadeTransform, Fade, Stagger } from 'react-animation-components';
 
 
 function About(props) {
@@ -89,9 +90,9 @@ function PartnerList(props) {
     const {partners, isLoading, errMess} = props.partners;
     const partnersList = partners.map(partner => {
         return (
-            <Media tag="li" key={partner.id}>
+            <Fade key={partner.id}><Media tag="li">
                 <RenderPartner partner={partner} />
-            </Media>
+            </Media></Fade>
         );
     });
     if (isLoading) {
@@ -103,9 +104,9 @@ function PartnerList(props) {
                 </div>
     }
     return (
-        <div className="col mt-4">
+         <div className="col mt-4">
             <Media list>
-                {partnersList}
+            <Stagger in>{partnersList}</Stagger>
             </Media>
         </div>
     );
